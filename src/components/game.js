@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Board } from './board';
+import { Form } from './form';
 export class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -67,7 +68,10 @@ export class Game extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-6">
+            <Form />
+          </div>
+          <div className="col-md-6">
            
             <div className="game">
               <div className="game-board">
