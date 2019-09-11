@@ -10,7 +10,7 @@ constructor(props){
 };
     this.handlePlayerTwo = this.handlePlayerTwo.bind(this);
     this.handlePlayerOne = this.handlePlayerOne.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    
 }
 
 
@@ -30,13 +30,11 @@ handlePlayerTwo(event){
         playerTwo: playerTwo
     });
 }
-handleSubmit(event){
-    
-}
+
     render() {
         return (
             <div> 
-            <form onSubmit={this.handleSubmit} hidden={this.displayForm}>
+            <form hidden={this.displayForm}>
             <label>
               Player 1:
               <input type="text" className="form-control" value={this.state.playerOne} onChange={this.handlePlayerOne} name="playerOne" />
@@ -45,7 +43,7 @@ handleSubmit(event){
               Player 2:
               <input type="text" className="form-control" value={this.state.playerTwo} onChange={this.handlePlayerTwo} name="PlayerTwo" />
             </label>
-            <input type="button" className="btn btn-primary"  value="Start" />
+            <input type="button" className="btn btn-primary" onClick={this.props.getPlayerName}  value="Start" />
           </form>
 
          <h3>{this.state.playerOne}</h3>
