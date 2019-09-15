@@ -8,9 +8,9 @@ constructor(props){
     playerTwo: '', 
     displayForm: true,
 };
-    this.handlePlayerTwo = this.handlePlayerTwo.bind(this);
+   
     this.handlePlayerOne = this.handlePlayerOne.bind(this);
-    
+    this.handlePlayerTwo = this.handlePlayerTwo.bind(this);
 }
 
 
@@ -23,13 +23,16 @@ handlePlayerOne(event){
     });
 }
 
+
 handlePlayerTwo(event){
     const target = event.target;
     const playerTwo = target.value;
     this.setState({
-        playerTwo: playerTwo
+        playerTwo: playerTwo, 
     });
 }
+
+
 
     render() {
         return (
@@ -46,8 +49,8 @@ handlePlayerTwo(event){
             <input type="button" className="btn btn-primary" onClick={this.props.getPlayerName}  value="Start" />
           </form>
 
-         <h3>{this.state.playerOne}</h3>
-         <h3>{this.state.playerTwo}</h3></div>
+         <h3>Player One: {this.state.playerOne}</h3>
+         <h3>Player Two: {this.state.playerTwo}</h3></div>
         );
     }
 }

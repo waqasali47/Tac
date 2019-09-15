@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {Game} from './components/game';
 import registerServiceWorker from './registerServiceWorker';
 import '../src/index.css'
+import 'animate.css'
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(

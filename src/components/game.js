@@ -13,6 +13,15 @@ export class Game extends React.Component {
       playerTwo: 'Player Two'
     };
   }
+
+  handlePlayerTwo(event){
+    const target = event.target;
+    const playerTwo = target.value;
+    this.setState({
+        playerTwo: playerTwo,
+    });
+}
+
   calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
@@ -48,10 +57,7 @@ export class Game extends React.Component {
     });
   }
 
-  updatePlayerNames (event){
-    console.log(event.target.value);
-  }
-
+  
   render() {
     const history = this.state.history;
     const current = history[history.length - 1];
@@ -61,7 +67,7 @@ export class Game extends React.Component {
     if (winner) {
       status = 'Winner: ' + winner ;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? this.state.playerOne : this.state.playerTwo);
+      status =  (this.state.xIsNext ? this.state.playerOne : this.state.playerTwo);
     }
 
     return (
@@ -75,7 +81,7 @@ export class Game extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <Form getPlayerName={this.updatePlayerNames} />
+            <Form  />
           </div>
           <div className="col-md-6">
            
